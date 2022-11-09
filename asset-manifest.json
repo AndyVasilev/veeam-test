@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/veeam-test/static/css/main.85adf175.css",
+    "main.js": "/veeam-test/static/js/main.d9a23d96.js",
+    "index.html": "/veeam-test/index.html",
+    "main.85adf175.css.map": "/veeam-test/static/css/main.85adf175.css.map",
+    "main.d9a23d96.js.map": "/veeam-test/static/js/main.d9a23d96.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.85adf175.css",
+    "static/js/main.d9a23d96.js"
+  ]
+}
