@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { reducer, defaultSchema, init } from './model';
+import Tabs from "./components/Tabs/Tabs";
+import Tab from "./components/Tabs/Tab";
+import FormConfig from "./components/FormGenerator/FormConfig/FormConfig";
+import FormResult from "./components/FormGenerator/FormResult/FormResult";
 
-function App() {
+export default function App() {
+  const [state, dispatch] = React.useReducer(reducer, defaultSchema, init);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="h-full sm:p-3 md:p-5 lg:p-10 antialiased">
+        <div className="relative flex flex-col h-full rounded-lg border border-slate-200 overflow-hidden">
+            <Tabs>
+                <Tab title="Config">
+                    <FormConfig state={state} dispatch={dispatch} />
+                </Tab>
+                <Tab title="Result">
+                    <FormResult schema={state.schema}></FormResult>
+                </Tab>
+            </Tabs>
+        </div>
     </div>
   );
 }
-
-export default App;
